@@ -1,5 +1,4 @@
 import GridDisplay from "./gridDisplay";
-import styles from "./page.module.css";
 import { Repo } from "./types";
 
 async function getRepo(): Promise<Repo[]> {
