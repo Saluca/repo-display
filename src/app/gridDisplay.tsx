@@ -10,10 +10,16 @@ export default function GridDisplay({ repos }: { repos: Repo[] }) {
 
   return (
     <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "2rem" }}>
-      <h1 style={{ fontSize: "2rem", marginBottom: "0.25rem" }}>
+      <h1
+        style={{
+          fontSize: "2rem",
+          marginBottom: "0.25rem",
+          fontFamily: "Geist",
+        }}
+      >
         Saluca repos
       </h1>
-      <p style={{ color: "#888", marginBottom: "1.5rem" }}>
+      <p style={{ color: "#555", marginBottom: "1.5rem", fontFamily: "Geist" }}>
         {repos.length} public repositories
       </p>
 
@@ -35,7 +41,9 @@ export default function GridDisplay({ repos }: { repos: Repo[] }) {
       />
 
       {filteredRepos.length === 0 && (
-        <p style={{ color: "#888" }}> No repos match: {query}</p>
+        <p style={{ color: "#2d2828", fontFamily: "Geist" }}>
+          No repos match: {query}
+        </p>
       )}
 
       <div
@@ -62,9 +70,12 @@ export default function GridDisplay({ repos }: { repos: Repo[] }) {
                 flexDirection: "column",
                 gap: "0.5rem",
                 backgroundColor: "#fff",
+                boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
               }}
             >
-              <h2 style={{ fontSize: "1rem", margin: 0 }}>{repo.name}</h2>
+              <h2 style={{ fontSize: "1rem", margin: 0, fontFamily: "Geist" }}>
+                {repo.name}
+              </h2>
 
               <p
                 style={{
@@ -72,6 +83,8 @@ export default function GridDisplay({ repos }: { repos: Repo[] }) {
                   color: "#555",
                   margin: 0,
                   flexGrow: 1,
+                  fontFamily: "Geist",
+                  fontWeight: "500",
                 }}
               >
                 {repo.description ?? "No description"}
@@ -82,8 +95,10 @@ export default function GridDisplay({ repos }: { repos: Repo[] }) {
                   display: "flex",
                   justifyContent: "space-between",
                   fontSize: "0.8rem",
-                  color: "#888",
+                  color: "#555",
                   marginTop: "0.5rem",
+                  fontFamily: "Geist",
+                  fontWeight: "500",
                 }}
               >
                 <span>⭐ {repo.stargazers_count}</span>
