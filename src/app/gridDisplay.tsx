@@ -1,7 +1,12 @@
 "use client";
 import { useState } from "react";
 import { Repo } from "./types";
-export default function GridDisplay({ repos }: { repos: Repo[] }) {
+
+type Props = {
+  repos: Repo[];
+};
+
+export default function GridDisplay({ repos }: Props) {
   const [query, setQuery] = useState("");
 
   const filteredRepos = repos.filter((repo) =>
