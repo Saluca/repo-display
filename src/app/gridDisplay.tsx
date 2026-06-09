@@ -4,9 +4,10 @@ import { Repo } from "./types";
 
 type Props = {
   repos: Repo[];
+  username: string;
 };
 
-export default function GridDisplay({ repos }: Props) {
+export default function GridDisplay({ repos, username }: Props) {
   const [query, setQuery] = useState("");
 
   const filteredRepos = repos.filter((repo) =>
@@ -22,7 +23,7 @@ export default function GridDisplay({ repos }: Props) {
           fontFamily: "Geist",
         }}
       >
-        Saluca repos
+        {username} repos
       </h1>
       <p style={{ color: "#555", marginBottom: "1.5rem", fontFamily: "Geist" }}>
         {repos.length} public repositories
